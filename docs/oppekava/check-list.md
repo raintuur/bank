@@ -6,23 +6,22 @@ Lihtne kontrollnimekiri töötoa ajal järje hoidmiseks. Märgi käsitletud teem
 
 - [ ] Osalejatel on Claude Code kasutamiseks subscription või API key
 - [ ] Projekt on kloonitud
-- [ ] Iga osaleja töötab oma Git-harus
+- [ ] [Iga osaleja töötab oma Git-harus](materjalid/git-harud-ja-opetajale-jargi-tulemine.md)
 - [ ] Vajalikud arendustööriistad töötavad WSL2/Ubuntu keskkonnas
 - [ ] Lokaalne PostgreSQL töötab
 - [ ] `vali_it` andmebaas on loodud ja seadistatud
 - [ ] Backendi build ja testid töötavad
 - [ ] Frontendi sõltuvused on paigaldatud ja rakendus käivitub
-- [ ] Vajalikud checkpoint'id või lektori harud on olemas
+- [ ] [Soovi korral võib jääda vaatlejaks](materjalid/vaatlejana-osalemine.md)
+- [ ] [Töötuba on dialoog](materjalid/tootuba-on-dialoog.md)
 
 ## Sissejuhatus
 
 - [ ] [Töötoa eesmärk ja ülesehitus](materjalid/tootoa-eesmark-ja-ulesehitus.md)
-- [ ] Claude Code'i roll arendustööriistana
-- [ ] Arendaja vastutus AI loodud tulemuse eest
-- [ ] Kuidas Claude Code projekti konteksti kasutab
-- [ ] `CLAUDE.md` failide eesmärk
-- [ ] `/init`
-- [ ] `/permissions`
+- [ ] [`/init`](materjalid/init.md)
+- [ ] [`CLAUDE.md` failide eesmärk](materjalid/claude-md-failide-eesmark.md)
+- [ ] [Kuidas Claude Code projekti konteksti kasutab](materjalid/claude-code-projekti-kontekst.md)
+- [ ] [`/permissions`](materjalid/permissions.md)
 
 ## Ülesande planeerimine
 
