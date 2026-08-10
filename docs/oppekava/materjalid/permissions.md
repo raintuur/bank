@@ -33,10 +33,10 @@ Reeglid võivad asuda:
 
 ## Demo
 
-Palu Claude'il käivitada:
+Palu Claude'il:
 
 ```text
-git fetch origin
+käivita git fetch origin
 ```
 
 Vali **Yes, don't ask again**, ava `/permissions` ja vaata lisatud reeglit. Käivita sama käsk uuesti — Claude ei peaks enam luba küsima.
