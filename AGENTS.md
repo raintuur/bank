@@ -46,3 +46,12 @@ Backend tests use JUnit Platform and belong in `backend/src/test/java`, named `*
 Use short, imperative commit subjects with a conventional prefix, matching history: `feat: improve catch up teacher skill` or `docs: update workshop materials`. Keep unrelated changes in separate commits.
 
 Pull requests should explain the change, list verification commands, and link the relevant issue or task. Include screenshots for visible frontend changes and call out database or configuration changes explicitly. Never commit production credentials or personal local settings.
+
+## Current Work: Claude Code Workshop Checklist
+
+The current task is to continue `docs/oppekava/check-list.md` for the Claude Code
+workshop. Keep simple topics as short checklist bullets. For topics that need explanation,
+add a concise Estonian cheat sheet under `docs/oppekava/materjalid/` and link it from the
+checklist. Match the structure and level of detail of the existing materials. The workshop
+is scheduled for 2026-08-12, so prioritize a usable presenter checklist over exhaustive
+documentation.

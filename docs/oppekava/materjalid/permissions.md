@@ -12,10 +12,10 @@ Siin saad vaadata ja muuta, mida Claude Code tohib teha.
 - **Ask** — Claude küsib enne tegevust kinnitust.
 - **Deny** — tegevus on keelatud.
 
-Näiteks võib lubada testide käivitamise, kuid keelata `git push` käsu.
+Näiteks võib lubada `git fetch`, kuid keelata `git push` käsu.
 
 ```text
-Allow: Bash(./gradlew test)
+Allow: Bash(git fetch *)
 Deny:  Bash(git push *)
 ```
 
@@ -23,15 +23,11 @@ Keelav reegel on alati lubavast reeglist tugevam. Anna Claude'ile ainult ülesan
 
 Kui Claude küsib käsu käivitamiseks luba ja valid **Yes, don't ask again**, salvestatakse vastav käsureegel projekti jaoks. Failimuudatuste luba võib kehtida ainult sessiooni lõpuni.
 
-Reeglid võivad asuda:
-
-- `.claude/settings.local.json` — sinule selles projektis;
-- `.claude/settings.json` — kogu meeskonnale;
-- `~/.claude/settings.json` — sinule kõikides projektides.
-
 `/permissions` näitab, millisest failist iga reegel pärineb.
 
 ## Demo
+
+Enne demo ava [`.claude/settings.local.json`](../../../.claude/settings.local.json), et näha faili algset sisu.
 
 Palu Claude'il:
 
@@ -39,4 +35,6 @@ Palu Claude'il:
 käivita git fetch origin
 ```
 
-Vali **Yes, don't ask again**, ava `/permissions` ja vaata lisatud reeglit. Käivita sama käsk uuesti — Claude ei peaks enam luba küsima.
+Kui Claude küsib luba, vajuta `Ctrl+E`. See kuvab või peidab selgituse, miks käsule luba küsitakse.
+
+Vali **Yes, don't ask again** ja vaata, kuidas `.claude/settings.local.json` faili `permissions` alla lisandus uus reegel. Seejärel ava uuesti `/permissions` ja vaata sama reeglit seal. Käivita sama käsk uuesti — Claude ei peaks enam luba küsima.

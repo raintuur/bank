@@ -35,6 +35,15 @@ Töötoa materjalide loomisel järgi neid põhimõtteid:
 - kasuta töötoa praktilise alusena seda olemasolevat Vali-IT pangaautomaatide asukoha projekti ning selle task'e, OpenAPI lepingut ja mock-pilte;
 - eelda töötoa arenduskeskkonnas lokaalset PostgreSQL-i ja `vali_it` andmebaasi vastavalt faili `backend/src/main/resources/application.properties` seadistusele; ära asenda seda H2-ga.
 
+### Pooleliolev töö: töötoa kontrollnimekiri
+
+Jätkame 2026-08-12 toimuva Claude Code'i töötoa läbiviija kontrollnimekirja failis
+`docs/oppekava/check-list.md`. Lihtsamad teemad jäävad checklist'i lühikeste punktidena.
+Selgitust vajava teema kohta loo lühike spikri-stiilis fail kausta
+`docs/oppekava/materjalid/` ja lingi see checklist'ist. Järgi olemasolevate materjalide
+ülesehitust, detailsust ja eestikeelset sõnastust. Eesmärk on homseks kasutatav
+läbiviimismaterjal, mitte ammendav käsiraamat.
+
 ## Claude Code'i keskkond (WSL2/Ubuntu)
 
 Claude Code terminal jookseb WSL2 Ubuntu sees, mitte Windowsi peal — Windowsi tööriistad (nt IntelliJ, Docker Desktop) ei ole siit kättesaadavad. Vali-IT õpilase masinal on WSL2 sees kindlalt olemas:
