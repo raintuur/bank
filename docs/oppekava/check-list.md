@@ -4,52 +4,52 @@ Lihtne kontrollnimekiri töötoa ajal järje hoidmiseks. Märgi käsitletud teem
 
 ## Enne töötoa algust
 
-- [ ] Osalejatel on Claude Code kasutamiseks subscription või API key
-- [ ] Projekt on kloonitud
-- [ ] [Iga osaleja töötab oma Git-harus](materjalid/git-harud-ja-opetajale-jargi-tulemine.md)
-- [ ] Vajalikud arendustööriistad töötavad WSL2/Ubuntu keskkonnas
-- [ ] Lokaalne PostgreSQL töötab
-- [ ] [IntelliJ Database'i all on ühendus olemas](materjalid/intellij-andmebaasi-uhendus.md)
-- [ ] `vali_it` andmebaas on loodud ja seadistatud
-- [ ] Backendi build ja testid töötavad
-- [ ] Frontendi sõltuvused on paigaldatud ja rakendus käivitub
-- [ ] [Promptide jagamine töötoa ajal](materjalid/promptide-jagamine.md)
-- [ ] [Soovi korral võib jääda vaatlejaks](materjalid/vaatlejana-osalemine.md)
-- [ ] [Töötuba on dialoog](materjalid/tootuba-on-dialoog.md)
+- [x] Osalejatel on Claude Code kasutamiseks subscription või API key
+- [x] Projekt on kloonitud
+- [x] [Iga osaleja töötab oma Git-harus](materjalid/git-harud-ja-opetajale-jargi-tulemine.md)
+- [x] Vajalikud arendustööriistad töötavad WSL2/Ubuntu keskkonnas
+- [x] Lokaalne PostgreSQL töötab
+- [x] [IntelliJ Database'i all on ühendus olemas](materjalid/intellij-andmebaasi-uhendus.md)
+- [x] `vali_it` andmebaas on loodud ja seadistatud
+- [x] Backendi build ja testid töötavad
+- [x] Frontendi sõltuvused on paigaldatud ja rakendus käivitub
+- [x] [Promptide jagamine töötoa ajal](materjalid/promptide-jagamine.md)
+- [x] [Soovi korral võib jääda vaatlejaks](materjalid/vaatlejana-osalemine.md)
+- [x] [Töötuba on dialoog](materjalid/tootuba-on-dialoog.md)
 
 ## Sissejuhatus
 
-- [ ] [Töötoa eesmärk ja ülesehitus](materjalid/tootoa-eesmark-ja-ulesehitus.md)
-- [ ] [`/init`](materjalid/init.md)
-- [ ] [`CLAUDE.md` failide eesmärk](materjalid/claude-md-failide-eesmark.md)
-- [ ] [Kuidas Claude Code projekti konteksti kasutab](materjalid/claude-code-projekti-kontekst.md)
+- [x] [Töötoa eesmärk ja ülesehitus](materjalid/tootoa-eesmark-ja-ulesehitus.md)
+- [x] [`/init`](materjalid/init.md)
+- [x] [`CLAUDE.md` failide eesmärk](materjalid/claude-md-failide-eesmark.md)
+- [x] [Kuidas Claude Code projekti konteksti kasutab](materjalid/claude-code-projekti-kontekst.md)
 
 ## Claude Code'i terminali põhivõtted
 
-- [ ] `/` — käskude ja skillide menüü
-- [ ] `@` — failile või kaustale viitamine
-- [ ] `!` — terminalikäsu käivitamine (!git status)
-- [ ] `Alt+V` — lõikelaualt pildi lisamine Windowsis
-- [ ] `Shift+Enter` või `Ctrl+J` — uus rida promptis
-- [ ] `↑` / `↓` — varasemate promptide sirvimine
-- [ ] `Ctrl+U` — sisestusrea tühjendamine
-- [ ] `Esc` — Claude'i tegevuse katkestamine
-- [ ] [`Ctrl+Z` — Claude Code'i peatamine](materjalid/ctrl-z.md)
-- [ ] [`Shift+Tab` — permission mode'i vahetamine](materjalid/permission-mode.md)
-- [ ] [`Ctrl+Alt+K` — IDE-st faili ja valitud ridade lisamine](materjalid/ctrl-alt-k.md)
-- [ ] Ava kõrvale uus terminal — korraga võib olla avatud mitu terminali
+- [x] `/` — käskude ja skillide menüü
+- [x] `@` — failile või kaustale viitamine
+- [x] `!` — terminalikäsu käivitamine (!git status)
+- [x] `Alt+V` — lõikelaualt pildi lisamine Windowsis
+- [x] `Shift+Enter` või `Ctrl+J` — uus rida promptis
+- [x] `↑` / `↓` — varasemate promptide sirvimine
+- [x] `Ctrl+U` — sisestusrea tühjendamine
+- [x] `Esc` — Claude'i tegevuse katkestamine
+- [x] [`Ctrl+Z` — Claude Code'i peatamine](materjalid/ctrl-z.md)
+- [x] [`Shift+Tab` — permission mode'i vahetamine](materjalid/permission-mode.md)
+- [x] [`Ctrl+Alt+K` — IDE-st faili ja valitud ridade lisamine](materjalid/ctrl-alt-k.md)
+- [x] Ava kõrvale uus terminal — korraga võib olla avatud mitu terminali
 
 ## Käsud ja featuurid
 
-- [ ] [`/model`](materjalid/model.md)
-- [ ] [`/effort`](materjalid/effort.md)
-- [ ] [`settings.json`](materjalid/settings-json.md)
-- [ ] [`/permissions`](materjalid/permissions.md)
-- [ ] [`/chrome`](materjalid/chrome.md)
-- [ ] `/powerup` — lühikesed interaktiivsed õpetused
-- [ ] `/color` — promptiriba värvi muutmine
-- [ ] `/copy` — Claude'i viimase vastuse kopeerimine
-- [ ] `/skills` — saadaolevate skillide vaatamine
+- [x] [`/model`](materjalid/model.md)
+- [x] [`/effort`](materjalid/effort.md)
+- [x] [`settings.json`](materjalid/settings-json.md)
+- [x] [`/permissions`](materjalid/permissions.md)
+- [x] [`/chrome`](materjalid/chrome.md)
+- [x] `/powerup` — lühikesed interaktiivsed õpetused
+- [x] `/color` — promptiriba värvi muutmine
+- [x] `/copy` — Claude'i viimase vastuse kopeerimine
+- [x] `/skills` — saadaolevate skillide vaatamine
 
 
 ## Kontekst ja sessiooni haldamine
