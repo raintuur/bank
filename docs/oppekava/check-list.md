@@ -70,9 +70,9 @@ Lihtne kontrollnimekiri töötoa ajal järje hoidmiseks. Märgi käsitletud teem
 
 ## Projekti tutvustus
 - [ ] [Projekti idee](materjalid/projekti-idee.md)
-- [ ] Mock veebileht (Balsamic)
-- [ ] Jira taskid
-- [ ] PDF taskid
+- [ ] [Mock veebileht (Balsamiq)](materjalid/mock-veebileht-balsamiq.md)
+- [ ] [Jira taskid](materjalid/jira-taskid.md)
+- [ ] [PDF taskid](materjalid/pdf-taskid.md)
 - [ ] [Andmebaasi mudel](materjalid/andmebaasi-mudel.md)
 - [ ] [`openAPI.json`](materjalid/openapi-json.md)
 
@@ -90,42 +90,44 @@ Lihtne kontrollnimekiri töötoa ajal järje hoidmiseks. Märgi käsitletud teem
 - [ ] [`/rewind`](materjalid/rewind.md)
 
 ## Taskist .md fail
-- [ ] Teeme PDF to .md skilli (esialgu notepadis)
+- [ ] [Teeme PDF to .md skilli (esialgu Notepadis)](materjalid/pdf-to-md-skill.md)
 - [ ] FEB-7 - Login koos rolliga (commit)
 - [ ] BEB-5 - Login koos rolliga (commit)
 - [ ] BEB-5 skill-grill-me demo (lühidalt)
 
 ## Taskist implementatsiooni plaan
-- [ ] Teeme skilli, mis paneb mitmest .md failist kokku implementatsiooni plaani (notepadis)
+- [ ] [Teeme mitmest .md failist implementatsiooniplaani skilli (esialgu Notepadis)](materjalid/md-failidest-implementatsiooni-plaan.md)
 - [ ] FEB-7
 - [ ] BEB-5
 - [ ] commit
 
 ## Taski implementatsioon
-- [ ] Implementeerime lahenduse
-- [ ] commit
+- [ ] [Implementeerime lahenduse](materjalid/implementeerime-lahenduse.md)
+- [ ] NB! ÄRA TEE commiti
 
 ## Valminud töö ülevaatus
-- [ ] `/code-review`
-- [ ] `/simplify`
-- [ ] `/security-review`
+- [ ] [`/simplify`](materjalid/simplify.md)
+- [ ] [`/security-review`](materjalid/security-review.md)
+- [ ] [`/code-review`](materjalid/code-review.md)
 - [ ] commit
 
 
 ## Teeme taski + implementatsioon (Mock REST + openAPI.json kontroll) -> notepadis
-- [ ] STEP-6 (Pangautomaadid, tabel)-KÕIK
+- [ ] [STEP-6 (Pangautomaadid, tabel)-KÕIK](materjalid/step-6-pangaautomaatide-tabel.md)
 - [ ] commit
 
 ## /plan mode (Mock basic + openAPI.json)
-- [ ] Teeme esialgse plaani notepadis
+- [ ] [Teeme esialgse plaani Notepadis](materjalid/step-7-asukoha-lisamise-plaan.md)
 - [ ] STEP-7 (Askoha lisamine - tühi)
 - [ ] STEP-7 (Askoha lisamine) komponentide raamid
 - [ ] STEP-7 (Askoha lisamine) success message
 
 
 ## Single prompt + openAPI.json
-- [ ] vaade /atms asukoha nimi hüperlingiks
+- [ ] [Vaade `/atms`: asukoha nimi hüperlingiks](materjalid/atms-asukoha-link.md)
 - [ ] vaata referensiks üle vaated STEP-9 (Pangaautomaadid, view link) ja STEP-10-Mustamäe (view)
 
 
 ## Tagasiside
+
+- [ ] [Palun jätke tagasiside](materjalid/tagasiside.md)
