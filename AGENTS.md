@@ -6,7 +6,7 @@ This repository contains two independently run applications:
 
 - `backend/`: Java 21 and Spring Boot REST API. Production code is under `src/main/java/ee/bcs/bank`, configuration under `src/main/resources`, and tests under `src/test/java`.
 - `frontend/`: Vue 3 and Vite SPA. Application code is in `src/`, static assets in `src/assets/` and `public/`, routes in `src/router/`, and Pinia stores in `src/stores/`.
-- `docs/`: database scripts, frontend notes, tutorials, and workshop materials.
+- `docs/`: architecture documents (including the OpenAPI contract at `docs/architecture/openAPI.json`), database scripts, frontend notes, tutorials, and workshop materials.
 - `scripts/`: repository automation helpers.
 
 Read the root `CLAUDE.md` and the module-specific `backend/CLAUDE.md` or `frontend/CLAUDE.md` before changing a module.

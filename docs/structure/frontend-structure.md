@@ -1,40 +1,8 @@
-# CLAUDE.md
+# Frontendi soovituslik struktuur
 
-See fail annab juhiseid Claude Code'ile (claude.ai/code) selle repositooriumi koodiga töötamisel.
-
-## Käsud
-
-```sh
-npm install        # Installi sõltuvused
-npm run dev        # Arendusserver aadressil http://localhost:8081
-npm run build      # Tootmisbuild
-npm run lint       # Käivita oxlint ja eslint (mõlemad --fix lipuga)
-npm run format     # Prettieri formaatimine src/ kaustas
-```
-
-## Arhitektuur
-
-See on Vue 3 + Vite frontend pangaäpile (Vali-IT grupiprojekt).
-
-**Stack:** Vue 3 (Composition API), Vue Router 5, Pinia, Bootstrap 5, Axios, Phosphor Icons
-
-**Sisenemispunkt:** `index.html` on hetkel Vue app kommenteeritud välja ja näitab lihtsat HTML õppeharjutust. Vue app (`src/main.js` → `src/App.vue`) käivitatakse eraldi, kuid pole veel `index.html`-ga ühendatud.
-
-**API proksi:** Vite suunab `/api` päringud Stoplight mock-serverisse (`https://stoplight.io/mocks/valiit/myproject/170385130`). Kohalik backendivahetaja (`http://localhost:8080`) on `vite.config.js`-is kommenteeritud välja.
-
-**Globaalne axios:** Axios on registreeritud `app.config.globalProperties.$axios`-na — komponentides kasuta `this.$axios` (Options API) või inject via `getCurrentInstance` (Composition API).
-
-**Olekuhaldus:** Pinia store'id asuvad `src/stores/` kaustas. Hetkel on olemas ainult näidis `counter` store.
-
-**Marsruutimine:** Marsruudid on defineeritud `src/router/index.js`-is. `/about` laaditakse laisklaadimisega.
-
-**Tee alias:** `@` viitab `src/` kaustale.
-
-### Soovituslik failide ja kaustade struktuur
-
-See on frontendi soovituslik sihtstruktuur. Loo ainult funktsionaalsuse jaoks vajalikud
-kaustad ja failid; `example` tähistab päris funktsionaalsust, näiteks `location` või
-`transactionType`.
+See on Vue 3 + Vite frontendi soovituslik sihtstruktuur. Loo ainult funktsionaalsuse jaoks
+vajalikud kaustad ja failid; `example` tähistab päris funktsionaalsust, näiteks `location`
+või `transactionType`.
 
 ```text
 frontend/
@@ -73,18 +41,30 @@ frontend/
 └── vite.config.js                       // Vite'i ja API proksi seadistus
 ```
 
-Ära loo tühje näidiskaustu ette. Lisa `services/`, domeenikomponent või store siis, kui
-funktsionaalsus seda vajab. Pikem struktuurikirjeldus:
-[`docs/structure/frontend-structure.md`](../docs/structure/frontend-structure.md).
+## Kaustade vastutus
 
-## Koodistiil
+- `views/` sisaldab marsruutidele vastavaid lehekomponente. Vaade seob lehe osad kokku,
+  kuid korduvkasutatav UI ja API-päringud ei kuulu otse vaatesse.
+- `components/` sisaldab korduvkasutatavaid komponente. Domeenist sõltumatud komponendid
+  lähevad `common/` alla, funktsionaalsusega seotud komponendid oma alankausta.
+- `services/` koondab Axiosel põhinevad API-päringud. Üks teenus vastutab ühe
+  funktsionaalsuse või ressursi eest.
+- `stores/` sisaldab ainult komponentide vahel jagatavat Pinia olekut. Ühe komponendi
+  lokaalne olek jääb komponenti.
+- `router/` kirjeldab URL-ide ja vaadete seosed ning vajaduse korral
+  navigatsioonikaitsed.
+- `assets/` sisaldab lähtekoodist imporditavaid pilte ja stiile. Muutmata kujul avaldatavad
+  failid lähevad `public/` kausta.
 
-Prettieri seadistus: ilma semikooloniteta, ülakomad, 100-märgiline reavaheline laius. ESLint käivitab esmalt oxlinti, seejärel eslint-plugin-vue (olulised reeglid), Prettieri formaatimine on ESLintist välja jäetud.
+## Nimetamine
 
-## Keel
+- Vue komponentide ja vaadete failinimed on PascalCase'is: `LocationList.vue` ja
+  `LocationDetailView.vue`.
+- Teenusefailide nimed on camelCase'is ja lõppevad sõnaga `Service`:
+  `locationService.js`.
+- Pinia store'i fail saab funktsionaalsust kirjeldava nime, näiteks `location.js`.
+- Üldine komponent saab `App`-prefiksi või selgelt rolli kirjeldava nime, näiteks
+  `AppNavbar.vue` või `LoadingSpinner.vue`.
 
-Selle faili (`CLAUDE.md`) sisu peab alati olema eestikeelne.
-
-## Dokumentatsioon
-
-Kogu dokumentatsioon asub `docs/` kausta alakaustades. Kõigi dokumentatsioonifailide sisu peab alati olema eestikeelne.
+Ära loo tühje näidiskaustu ette. Kui projekt võtab hiljem kasutusele TypeScripti, i18n-i
+või testiraamistiku, lisa nende jaoks eraldi struktuur alles koos vastava seadistusega.

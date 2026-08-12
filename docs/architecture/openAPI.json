@@ -1,0 +1,556 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "OpenAPI definition",
+    "version": "v0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080",
+      "description": "Generated server url"
+    }
+  ],
+  "paths": {
+    "/api/atm/location": {
+      "get": {
+        "tags": [
+          "location-controller"
+        ],
+        "summary": "Leiab locationId järgi olemasoleva pangaautomaadi asukoha info.",
+        "operationId": "findLocationDetail",
+        "parameters": [
+          {
+            "name": "locationId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/LocationDetailDto"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Ei leidnud primary keyd 'locationId' väärtusega: {locationId}",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "location-controller"
+        ],
+        "summary": "Muudab olemasoleva pangaautomaadi andmeid (kirjutab üle).",
+        "operationId": "updateLocation",
+        "parameters": [
+          {
+            "name": "locationId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LocationDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Ei leidnud primary keyd 'locationId' väärtusega: {locationId}",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "location-controller"
+        ],
+        "summary": "Uue pangaautomaadi lisamine.",
+        "description": "Pildi lisamine pole kohustuslik; pildi puudumisel saadetakse imageData väärtuseks tühi string. transactionTypeName infot koodis ei kasutata.",
+        "operationId": "addLocation",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LocationDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "403": {
+            "description": "Sellise nimega pangaautomaadi asukoht on juba süsteemis olemas",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "location-controller"
+        ],
+        "summary": "Eemaldab süsteemist pangaautomaadi asukoha",
+        "description": "'location' tabeli veeru 'status' väärtus muudetakse väärtuseks D (soft delete)",
+        "operationId": "deleteLocation",
+        "parameters": [
+          {
+            "name": "locationId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Ei leidnud primary keyd 'locationId' väärtusega: {locationId}",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/login": {
+      "get": {
+        "tags": [
+          "login-controller"
+        ],
+        "summary": "Sisse logimine. Tagastab userId ja roleName",
+        "description": "Süsteemist otsitakse username ja password abil kasutajat, kelle konto on ka aktiivne.\nKui vastet ei leita vistakse viga errorCode'ga 111",
+        "operationId": "login",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginResponseDto"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Vale kasutajanimi või parool",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cities": {
+      "get": {
+        "tags": [
+          "city-controller"
+        ],
+        "summary": "Leiab süsteemist kõik linnad",
+        "description": "Tagastab massiivi koos 'cityId' ja 'cityName' infoga",
+        "operationId": "findCities",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CityOptionDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/atm/transaction-types": {
+      "get": {
+        "tags": [
+          "transaction-type-controller"
+        ],
+        "summary": "Tagastab kõik võimalikud pangaautomaadi teenused",
+        "operationId": "findTransactionTypes",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TransactionTypeOptionDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/atm/locations": {
+      "get": {
+        "tags": [
+          "location-controller"
+        ],
+        "summary": "Tagastab pangaatuomaatide asukohtade infot.",
+        "description": "Kui cityId on 0, siis tagastatakse kõik asukohad",
+        "operationId": "findLocations",
+        "parameters": [
+          {
+            "name": "cityId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LocationResponseDto"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Ei leitud ühtegi pangaautomaati",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/atm/locations/detail": {
+      "get": {
+        "tags": [
+          "location-controller"
+        ],
+        "summary": "Tagastab pangaautomaatide asukohtade detailinfo koos pildiga.",
+        "description": "Kui cityId on 0, siis tagastatakse kõik asukohad",
+        "operationId": "findLocationDetails",
+        "parameters": [
+          {
+            "name": "cityId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LocationDetailDto"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Ei leitud ühtegi pangaautomaati",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "LocationDto": {
+        "type": "object",
+        "properties": {
+          "cityId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "locationName": {
+            "type": "string",
+            "maxLength": 255,
+            "minLength": 0
+          },
+          "numberOfAtms": {
+            "type": "integer",
+            "format": "int32",
+            "minimum": 1
+          },
+          "imageData": {
+            "type": "string"
+          },
+          "lng": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double"
+          },
+          "lat": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double"
+          },
+          "transactionTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TransactionTypeOptionDto"
+            }
+          }
+        },
+        "required": [
+          "imageData",
+          "locationName",
+          "numberOfAtms"
+        ]
+      },
+      "TransactionTypeOptionDto": {
+        "type": "object",
+        "properties": {
+          "transactionTypeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "transactionTypeName": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "isAvailable": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ApiError": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "errorCode": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "LoginResponseDto": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "roleName": {
+            "type": "string"
+          }
+        }
+      },
+      "CityOptionDto": {
+        "type": "object",
+        "properties": {
+          "cityId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cityName": {
+            "type": "string"
+          }
+        }
+      },
+      "LocationResponseDto": {
+        "type": "object",
+        "properties": {
+          "locationId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cityName": {
+            "type": "string"
+          },
+          "locationName": {
+            "type": "string"
+          },
+          "lng": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double"
+          },
+          "lat": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double"
+          },
+          "transactionTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TransactionTypeDto"
+            }
+          }
+        }
+      },
+      "TransactionTypeDto": {
+        "type": "object",
+        "properties": {
+          "transactionTypeName": {
+            "type": "string"
+          },
+          "transactionTypeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isAvailable": {
+            "type": "boolean"
+          }
+        }
+      },
+      "LocationDetailDto": {
+        "type": "object",
+        "properties": {
+          "locationId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cityId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "locationName": {
+            "type": "string"
+          },
+          "numberOfAtms": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "imageData": {
+            "type": "string"
+          },
+          "lng": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double"
+          },
+          "lat": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double"
+          },
+          "transactionTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TransactionTypeDto"
+            }
+          }
+        }
+      }
+    }
+  }
+}

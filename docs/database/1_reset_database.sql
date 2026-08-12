@@ -1,7 +1,7 @@
 -- Kustutab public schema (mis põhimõtteliselt kustutab kõik tabelid)
-DROP SCHEMA IF EXISTS bank CASCADE;
+DROP SCHEMA IF EXISTS public CASCADE;
 -- Loob uue public schema vajalikud õigused
-CREATE SCHEMA bank
+CREATE SCHEMA public
 -- taastab vajalikud andmebaasi õigused
-    GRANT ALL ON SCHEMA bank TO postgres;
-GRANT ALL ON SCHEMA bank TO PUBLIC;
+    GRANT ALL ON SCHEMA public TO postgres;
+GRANT ALL ON SCHEMA public TO PUBLIC;

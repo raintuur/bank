@@ -9,6 +9,7 @@ Lihtne kontrollnimekiri töötoa ajal järje hoidmiseks. Märgi käsitletud teem
 - [ ] [Iga osaleja töötab oma Git-harus](materjalid/git-harud-ja-opetajale-jargi-tulemine.md)
 - [ ] Vajalikud arendustööriistad töötavad WSL2/Ubuntu keskkonnas
 - [ ] Lokaalne PostgreSQL töötab
+- [ ] [IntelliJ Database'i all on ühendus olemas](materjalid/intellij-andmebaasi-uhendus.md)
 - [ ] `vali_it` andmebaas on loodud ja seadistatud
 - [ ] Backendi build ja testid töötavad
 - [ ] Frontendi sõltuvused on paigaldatud ja rakendus käivitub
@@ -49,7 +50,7 @@ Lihtne kontrollnimekiri töötoa ajal järje hoidmiseks. Märgi käsitletud teem
 - [ ] `/color` — promptiriba värvi muutmine
 - [ ] `/copy` — Claude'i viimase vastuse kopeerimine
 - [ ] `/skills` — saadaolevate skillide vaatamine
-- [ ] [`/rewind`](materjalid/rewind.md)
+
 
 ## Kontekst ja sessiooni haldamine
 
@@ -72,7 +73,8 @@ Lihtne kontrollnimekiri töötoa ajal järje hoidmiseks. Märgi käsitletud teem
 - [ ] Mock veebileht (Balsamic)
 - [ ] Jira taskid
 - [ ] PDF taskid
-- [ ] Andmebaasi mudel
+- [ ] [Andmebaasi mudel](materjalid/andmebaasi-mudel.md)
+- [ ] [`openAPI.json`](materjalid/openapi-json.md)
 
 
 ## MCP
@@ -83,55 +85,47 @@ Lihtne kontrollnimekiri töötoa ajal järje hoidmiseks. Märgi käsitletud teem
 - [ ] [MCP serveri eemaldamise näide](materjalid/mcp-eemaldamise-naide.md)
 
 
-## Ülesande planeerimine
+## PDF Taski järgi arendus
+- [ ] [FEB-4 ja FEB-5](materjalid/pdf-taski-jargi-arendus.md) (commit)
+- [ ] [`/rewind`](materjalid/rewind.md)
 
-- [ ] Hea prompti põhiosad: kontekst, eesmärk, piirangud ja kontroll
-- [ ] Täisvalmis näidisprompt
-- [ ] Plan mode ja `/plan`
-- [ ] Plaani ülevaatamine ning täpsustamine enne koodi muutmist
-- [ ] Sobiva mudeli ja reasoning-taseme valimine
+## Taskist .md fail
+- [ ] Teeme PDF to .md skilli (esialgu notepadis)
+- [ ] FEB-7 - Login koos rolliga (commit)
+- [ ] BEB-5 - Login koos rolliga (commit)
+- [ ] BEB-5 skill-grill-me demo (lühidalt)
 
-## Praktiline arendus
+## Taskist implementatsiooni plaan
+- [ ] Teeme skilli, mis paneb mitmest .md failist kokku implementatsiooni plaani (notepadis)
+- [ ] FEB-7
+- [ ] BEB-5
+- [ ] commit
 
-- [ ] Esimene kumulatiivne task
-- [ ] Pooliku prompti täiendamine
-- [ ] Claude Code'i tehtud muudatuste jälgimine
-- [ ] Buildi ja testide käivitamine
-- [ ] Vigade korral tulemuse täpsustamine
-- [ ] Iseseisva prompti koostamine
-- [ ] Järgmine kumulatiivne task
-
-## Muudatuste kontroll ja turvaline katsetamine
-
-- [ ] Git diffi lugemine
-- [ ] `/diff`
-- [ ] Checkpoint'id
-- [ ] Osaleja senise töö säilitamine eraldi harus
-- [ ] Lektori harult uue jätkamisharu loomine
+## Taski implementatsioon
+- [ ] Implementeerime lahenduse
+- [ ] commit
 
 ## Valminud töö ülevaatus
-
 - [ ] `/code-review`
 - [ ] `/simplify`
 - [ ] `/security-review`
-- [ ] Leitud probleemide hindamine enne paranduste rakendamist
-- [ ] Lõplik build ja testid
+- [ ] commit
 
-## Töötoa lõpetamine
 
-- [ ] Õpitu lühikokkuvõte
-- [ ] Osaleja oskab valida ülesande jaoks sobiva Claude Code'i töövõtte
-- [ ] Osaleja teab, kuidas oma töö juurde hiljem tagasi tulla
-- [ ] Küsimused ja vastused
+## Teeme taski + implementatsioon (Mock REST + openAPI.json kontroll) -> notepadis
+- [ ] STEP-6 (Pangautomaadid, tabel)-KÕIK
+- [ ] commit
 
-## Minu lisatavad teemad
+## /plan mode (Mock basic + openAPI.json)
+- [ ] Teeme esialgse plaani notepadis
+- [ ] STEP-7 (Askoha lisamine - tühi)
+- [ ] STEP-7 (Askoha lisamine) komponentide raamid
+- [ ] STEP-7 (Askoha lisamine) success message
 
-- [ ]
-- [ ]
-- [ ]
-- [ ]
-- [ ]
 
-## Märkmed töötoa ajal
+## Single prompt + openAPI.json
+- [ ] vaade /atms asukoha nimi hüperlingiks
+- [ ] vaata referensiks üle vaated STEP-9 (Pangaautomaadid, view link) ja STEP-10-Mustamäe (view)
 
--
+
+## Tagasi side
