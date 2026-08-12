@@ -102,3 +102,11 @@ public void someMethod() {
 ## Lisad
 
 Taskiga on kaasas andmebaasi mudeli pilt (tabelid `user`, `role`, `profile`, `user_image`, `location` jt).
+
+## Implementatsiooni otsused
+
+Kokku lepitud grillimise käigus (vt [[skill-grill-me]]):
+
+- **Veakäitlus**: kasutatakse olemasolevat `ForbiddenException`-it otse (`ForbiddenException("Vale kasutajanimi või parool", "111")`), nagu praegu teeb ka `PrimaryKeyNotFoundException`. Ei looda uut `ErrorResponse` enumit — see jääb tuleviku taskide teemaks.
+- **Parooli võrdlus**: lihttekstiline `.equals()` võrdlus. Andmebaasis on parool lihttekstina (nt `password='123'`) ja Spring Security pole sõltuvustes, seega räsimine oleks selle taski jaoks ülepingimine.
+- **Kasutaja otsimine**: üks kombineeritud JPQL päring, mis filtreerib `username` + `password` + `status = 'A'` korraga ja tagastab `Optional<AppUser>` — kõik ebaõnnestumise põhjused (vale kasutajanimi, vale parool, mitteaktiivne kasutaja) annavad niikuinii sama 403/111 vastuse, seega eraldi valideerimissammud poleks kasulikud.
