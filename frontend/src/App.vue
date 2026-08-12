@@ -11,7 +11,7 @@
     </button>
     <div class="collapse navbar-collapse justify-content-center" id="navMenu">
       <div class="navbar-nav">
-        <RouterLink class="nav-link" to="/">Home</RouterLink>
+        <RouterLink class="nav-link" to="/">Kodu</RouterLink>
         <RouterLink class="nav-link" to="/test">Test</RouterLink>
       </div>
     </div>

@@ -1,16 +1,12 @@
 <template>
   <div class="container text-center">
-    <div class="alert alert-primary" role="alert">See on koduvaade, see asub rajal (/)</div>
-    <TestComponent/>
+    <h1>See on meie äge pank!</h1>
+    <img src="@/assets/images/atm.png" alt="Pangaautomaat" />
   </div>
 </template>
 
 <script>
-
-import TestComponent from "@/components/TestComponent.vue";
-
 export default {
   name: 'HomeView',
-  components: {TestComponent},
 }
 </script>
