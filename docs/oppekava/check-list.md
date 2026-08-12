@@ -128,4 +128,4 @@ Lihtne kontrollnimekiri töötoa ajal järje hoidmiseks. Märgi käsitletud teem
 - [ ] vaata referensiks üle vaated STEP-9 (Pangaautomaadid, view link) ja STEP-10-Mustamäe (view)
 
 
-## Tagasi side
+## Tagasiside

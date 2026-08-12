@@ -2,7 +2,9 @@
 
 ## Eesmärk
 
-Õpime Claude Code'i praktiliselt kasutama olemasolevas tarkvaraprojektis.
+Õpime Claude Code'i võimalusi praktiliselt kasutama olemasolevas tarkvaraprojektis.
+Eesmärk ei ole projekt valmis teha, vaid arendada selle valitud osi ning harjutada nende
+kaudu Claude Code'iga planeerimist, koodi muutmist ja tulemuse kontrollimist.
 
 ## Projekt
 

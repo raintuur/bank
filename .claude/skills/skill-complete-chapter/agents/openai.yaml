@@ -1,0 +1,4 @@
+interface:
+  display_name: "Complete Checklist Chapter"
+  short_description: "Märgi checklisti peatükk lõpetatuks"
+  default_prompt: "Kasuta $skill-complete-chapter skilli checklisti peatüki lõpetamiseks."
